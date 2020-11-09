@@ -5,16 +5,32 @@
     background-size: cover;
 }
 
-.header-mobile-block {
+.header-mobile-block-logo {
     display: inline-block;
-    padding: 8px 16px;
+    padding: 8px 0px 0px 16px;
+}
+
+.header-mobile-logo {
+    width: 75px;
+    height: 75px;
+}
+
+.header-mobile-block-h1 {
+    display: inline-block;
+    vertical-align: 140%;
 }
 
 .header-mobile-h1 {
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 30px;
     line-height: 24px;
     color: #B7FBFF;
+    margin: 0;
+}
+
+.header-back-button {
+    display: inline-block;
+    padding: 8px 0px 0px 16px;
 }

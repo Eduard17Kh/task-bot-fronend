@@ -2,14 +2,17 @@ import React from 'react';
 import Main from "./pages/Main";
 import './App.css';
 import {Container, useMediaQuery} from "@material-ui/core";
-import MainMobile from "./pages/mobile/main/Main-mobile";
+import HeaderMobileComponent from "./components/mobile/header/header-mobile-component";
+import RouterMobile from "./router/Router-mobile";
 
 export default function App() {
 
     const matches = useMediaQuery("(min-width:600px)");
     if(!matches) {
         return (
-            <MainMobile></MainMobile>
+            <div>
+                <RouterMobile></RouterMobile>
+            </div>
         )
     } else {
         return (

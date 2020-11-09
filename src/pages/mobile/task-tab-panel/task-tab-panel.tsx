@@ -6,6 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import SimpleCard from "../../../components/mobile/card/card-mobile-component";
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -44,9 +45,13 @@ function a11yProps(index: any) {
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
         backgroundColor: theme.palette.background.paper,
-        width: 500,
+        minWidth: 320,
     },
-}));
+    body: {
+        backgroundColor: '#D6D4CD'
+    }
+    }
+));
 
 export default function FullWidthTabs() {
     const classes = useStyles();
@@ -67,10 +72,10 @@ export default function FullWidthTabs() {
                 <Tabs
                     value={value}
                     onChange={handleChange}
-                    indicatorColor="primary"
-                    textColor="primary"
+                    textColor="inherit"
                     variant="fullWidth"
                     aria-label="full width tabs example"
+                    TabIndicatorProps={{style: {background:'#B7FBFF'}}}
                 >
                     <Tab label="В работе" {...a11yProps(0)} />
                     <Tab label="Просрочено" {...a11yProps(1)} />
@@ -81,15 +86,19 @@ export default function FullWidthTabs() {
                 axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                 index={value}
                 onChangeIndex={handleChangeIndex}
+                className={classes.body}
             >
                 <TabPanel value={value} index={0} dir={theme.direction}>
-                    Item One
+                    <SimpleCard></SimpleCard>
+                    <SimpleCard></SimpleCard>
+                    <SimpleCard></SimpleCard>
                 </TabPanel>
                 <TabPanel value={value} index={1} dir={theme.direction}>
-                    Item Two
+                    <SimpleCard></SimpleCard>
+                    <SimpleCard></SimpleCard>
                 </TabPanel>
                 <TabPanel value={value} index={2} dir={theme.direction}>
-                    Item Three
+                    <SimpleCard></SimpleCard>
                 </TabPanel>
             </SwipeableViews>
         </div>
